@@ -1,21 +1,41 @@
 import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
+import br.com.dio.desafio.dominio.Desafio;
 import br.com.dio.desafio.dominio.Dev;
+import br.com.dio.desafio.dominio.Instutor;
 import br.com.dio.desafio.dominio.Mentoria;
 
 import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Curso curso1 = new Curso();
+
+        Instutor instutorCami = new Instutor();
+        instutorCami.setNome("Cami");
+        instutorCami.setEspecialidade("js");
+        
+        Instutor instutorVenilto = new Instutor();
+        instutorCami.setNome("Venilto");
+        instutorCami.setEspecialidade("java");
+        
+        
+        
+        Curso curso1 = new Curso(instutorVenilto);
         curso1.setTitulo("curso java");
         curso1.setDescricao("descrição curso java");
         curso1.setCargaHoraria(8);
 
-        Curso curso2 = new Curso();
+        Curso curso2 = new Curso(instutorCami);
         curso2.setTitulo("curso js");
         curso2.setDescricao("descrição curso js");
         curso2.setCargaHoraria(4);
+        
+        Desafio desafio1 = new Desafio();
+        desafio1.DesafioCodigo();
+        desafio1.DesafioProjeto();
+        
+        
+        	
 
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("mentoria de java");
@@ -32,6 +52,7 @@ public class Main {
         bootcamp.getConteudos().add(curso1);
         bootcamp.getConteudos().add(curso2);
         bootcamp.getConteudos().add(mentoria);
+        bootcamp.getConteudos().add(desafio1);
 
         Dev devCamila = new Dev();
         devCamila.setNome("Camila");
